@@ -306,18 +306,21 @@ function initParticles() {
         const positions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
 
-        // Cores do gradiente (lilás e azul)
-        const color1 = new THREE.Color(0x8B5CF6); // Lilás
-        const color2 = new THREE.Color(0x3B82F6); // Azul
+        // Cores do gradiente Pollen (laranja/dourado)
+        const color1 = new THREE.Color(0xFFB74D); // Pollen Light
+        const color2 = new THREE.Color(0xFF9F43); // Pollen Medium
+        const color3 = new THREE.Color(0xF58B39); // Pollen Deep
 
         for (let i = 0; i < particleCount * 3; i += 3) {
             positions[i] = (Math.random() - 0.5) * 20;
             positions[i + 1] = (Math.random() - 0.5) * 20;
             positions[i + 2] = (Math.random() - 0.5) * 20;
 
-            // Interpolar cores
+            // Interpolar cores entre as três cores Pollen
             const mix = Math.random();
-            const color = color1.clone().lerp(color2, mix);
+            const color = mix < 0.5 
+                ? color1.clone().lerp(color2, mix * 2)
+                : color2.clone().lerp(color3, (mix - 0.5) * 2);
             colors[i] = color.r;
             colors[i + 1] = color.g;
             colors[i + 2] = color.b;
