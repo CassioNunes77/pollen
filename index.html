@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pollen - Plataforma moderna e inovadora para conectar pessoas e ideias">
+    <meta name="keywords" content="pollen, tecnologia, inovação, conexão">
+    <title>Pollen - Conectando Ideias</title>
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lottie CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    
+    <!-- Three.js CDN (carregado condicionalmente) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo" aria-label="Pollen Home">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="url(#gradient)" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="12" fill="url(#gradient)" opacity="0.3"/>
+                        <circle cx="20" cy="8" r="3" fill="url(#gradient)"/>
+                        <circle cx="32" cy="20" r="3" fill="url(#gradient)"/>
+                        <circle cx="20" cy="32" r="3" fill="url(#gradient)"/>
+                        <circle cx="8" cy="20" r="3" fill="url(#gradient)"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="logo-text">Pollen</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#features" class="nav-link">Recursos</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
+                    <li><a href="#contact" class="nav-link">Contato</a></li>
+                    <li><a href="privacy.html" class="nav-link">Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background" id="heroBackground"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line" data-animate="fade-up">Conectando</span>
+                    <span class="title-line gradient-text" data-animate="fade-up" data-delay="0.1">Ideias</span>
+                    <span class="title-line" data-animate="fade-up" data-delay="0.2">e Pessoas</span>
+                </h1>
+                <p class="hero-subtitle" data-animate="fade-up" data-delay="0.3">
+                    Uma plataforma moderna que transforma conexões em oportunidades reais.
+                    Descubra o poder da colaboração inteligente.
+                </p>
+                <div class="hero-cta" data-animate="fade-up" data-delay="0.4">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Começar Agora</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <span>Saiba Mais</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <h2 class="section-title">Recursos Poderosos</h2>
+                <p class="section-subtitle">Tudo que você precisa para transformar suas ideias em realidade</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-animate="fade-up" data-delay="0.1">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="8" width="32" height="32" rx="4" stroke="url(#iconGradient)" stroke-width="2"/>
+                            <path d="M16 24L22 30L32 18" stroke="url(#iconGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Interface Intuitiva</h3>
+                    <p class="feature-description">
+                        Design pensado para facilitar sua experiência. Navegação simples e eficiente.
+                    </p>
+                </div>
+                <div class="feature-card" data-animate="fade-up" data-delay="0.2">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="16" stroke="url(#iconGradient)" stroke-width="2"/>
+                            <path d="M24 12V24L32 28" stroke="url(#iconGradient)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Performance</h3>
+                    <p class="feature-description">
+                        Tecnologia de ponta para garantir velocidade e confiabilidade em todas as operações.
+                    </p>
+                </div>
+                <div class="feature-card" data-animate="fade-up" data-delay="0.3">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 8L30 18H38L30 26L32 36L24 30L16 36L18 26L10 18H18L24 8Z" stroke="url(#iconGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Segurança</h3>
+                    <p class="feature-description">
+                        Seus dados protegidos com os mais altos padrões de segurança e privacidade.
+                    </p>
+                </div>
+                <div class="feature-card" data-animate="fade-up" data-delay="0.4">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <rect x="12" y="16" width="24" height="20" rx="2" stroke="url(#iconGradient)" stroke-width="2"/>
+                            <path d="M16 20H32M16 24H28M16 28H32" stroke="url(#iconGradient)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Colaboração</h3>
+                    <p class="feature-description">
+                        Trabalhe em equipe de forma eficiente com ferramentas de colaboração em tempo real.
+                    </p>
+                </div>
+                <div class="feature-card" data-animate="fade-up" data-delay="0.5">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 8C15.2 8 8 15.2 8 24C8 32.8 15.2 40 24 40C32.8 40 40 32.8 40 24" stroke="url(#iconGradient)" stroke-width="2"/>
+                            <path d="M24 8C28.4 8 32 11.6 32 16C32 20.4 28.4 24 24 24" stroke="url(#iconGradient)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Escalabilidade</h3>
+                    <p class="feature-description">
+                        Cresça sem limites. Nossa infraestrutura se adapta às suas necessidades.
+                    </p>
+                </div>
+                <div class="feature-card" data-animate="fade-up" data-delay="0.6">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 12L28 20H36L30 26L32 34L24 28L16 34L18 26L12 20H20L24 12Z" stroke="url(#iconGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Inovação</h3>
+                    <p class="feature-description">
+                        Sempre à frente com as últimas tecnologias e tendências do mercado.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </section>
+
+    <!-- Portfolio/Showcase Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <h2 class="section-title">Nossos Projetos</h2>
+                <p class="section-subtitle">Alguns exemplos do que podemos criar juntos</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-animate="fade-up" data-delay="0.1">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect x="10" y="10" width="60" height="60" rx="4" stroke="url(#portfolioGradient)" stroke-width="2"/>
+                                <circle cx="40" cy="30" r="8" fill="url(#portfolioGradient)" opacity="0.5"/>
+                                <path d="M20 50L30 60L50 40L60 50" stroke="url(#portfolioGradient)" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Projeto Alpha</h3>
+                        <p class="portfolio-description">Solução inovadora para gestão de equipes remotas</p>
+                        <a href="#" class="portfolio-link">Ver projeto →</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-animate="fade-up" data-delay="0.2">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect x="10" y="10" width="60" height="60" rx="4" stroke="url(#portfolioGradient)" stroke-width="2"/>
+                                <path d="M25 35L40 25L55 35V55H25V35Z" stroke="url(#portfolioGradient)" stroke-width="2" fill="url(#portfolioGradient)" opacity="0.2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Projeto Beta</h3>
+                        <p class="portfolio-description">Plataforma de e-commerce com IA integrada</p>
+                        <a href="#" class="portfolio-link">Ver projeto →</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-animate="fade-up" data-delay="0.3">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <rect x="10" y="10" width="60" height="60" rx="4" stroke="url(#portfolioGradient)" stroke-width="2"/>
+                                <circle cx="40" cy="40" r="15" stroke="url(#portfolioGradient)" stroke-width="2"/>
+                                <circle cx="40" cy="40" r="8" fill="url(#portfolioGradient)" opacity="0.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">Projeto Gamma</h3>
+                        <p class="portfolio-description">Sistema de análise de dados em tempo real</p>
+                        <a href="#" class="portfolio-link">Ver projeto →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <linearGradient id="portfolioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <h2 class="section-title">O Que Dizem Sobre Nós</h2>
+                <p class="section-subtitle">Depoimentos de quem já transformou seus projetos</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-animate="fade-up" data-delay="0.1">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M10 8C8 10 6 12 6 16C6 20 8 22 12 22C14 22 16 21 17 19C17 21 18 22 20 22C22 22 24 20 24 18C24 16 23 15 22 14C21 13 19 12 17 12C15 8 13 6 10 8Z" fill="url(#quoteGradient)" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "A Pollen transformou completamente a forma como nossa equipe trabalha. 
+                            A interface é intuitiva e os resultados são impressionantes."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <div class="avatar-placeholder">AM</div>
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Ana Maria</div>
+                                <div class="author-role">CEO, TechCorp</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="0.2">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M10 8C8 10 6 12 6 16C6 20 8 22 12 22C14 22 16 21 17 19C17 21 18 22 20 22C22 22 24 20 24 18C24 16 23 15 22 14C21 13 19 12 17 12C15 8 13 6 10 8Z" fill="url(#quoteGradient)" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "Incrível como a plataforma se adapta às nossas necessidades. 
+                            A escalabilidade e performance são excepcionais."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <div class="avatar-placeholder">JS</div>
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">João Silva</div>
+                                <div class="author-role">CTO, Inovatec</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="fade-up" data-delay="0.3">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M10 8C8 10 6 12 6 16C6 20 8 22 12 22C14 22 16 21 17 19C17 21 18 22 20 22C22 22 24 20 24 18C24 16 23 15 22 14C21 13 19 12 17 12C15 8 13 6 10 8Z" fill="url(#quoteGradient)" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">
+                            "A melhor decisão que tomamos este ano. A Pollen nos ajudou a 
+                            alcançar resultados que antes pareciam impossíveis."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <div class="avatar-placeholder">MC</div>
+                            </div>
+                            <div class="author-info">
+                                <div class="author-name">Maria Costa</div>
+                                <div class="author-role">Diretora, Digital Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <linearGradient id="quoteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content" data-animate="fade-up">
+                <h2 class="cta-title">Pronto para Começar?</h2>
+                <p class="cta-subtitle">
+                    Junte-se a milhares de pessoas que já transformaram seus projetos com a Pollen
+                </p>
+                <form class="cta-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="Seu melhor e-mail"
+                            required
+                            aria-label="Email"
+                        >
+                        <button type="submit" class="btn btn-primary">
+                            <span>Começar Agora</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="form-note">Ao continuar, você concorda com nossa <a href="privacy.html">Política de Privacidade</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                            <circle cx="20" cy="20" r="18" stroke="url(#footerGradient)" stroke-width="2"/>
+                            <circle cx="20" cy="20" r="12" fill="url(#footerGradient)" opacity="0.3"/>
+                            <circle cx="20" cy="8" r="3" fill="url(#footerGradient)"/>
+                            <circle cx="32" cy="20" r="3" fill="url(#footerGradient)"/>
+                            <circle cx="20" cy="32" r="3" fill="url(#footerGradient)"/>
+                            <circle cx="8" cy="20" r="3" fill="url(#footerGradient)"/>
+                            <defs>
+                                <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="logo-text">Pollen</span>
+                    </a>
+                    <p class="footer-description">
+                        Conectando ideias e pessoas para criar o futuro.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Produto</h4>
+                        <ul>
+                            <li><a href="#features">Recursos</a></li>
+                            <li><a href="#portfolio">Portfólio</a></li>
+                            <li><a href="#testimonials">Depoimentos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Empresa</h4>
+                        <ul>
+                            <li><a href="#contact">Contato</a></li>
+                            <li><a href="privacy.html">Privacidade</a></li>
+                            <li><a href="#about">Sobre</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Social</h4>
+                        <ul>
+                            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+                            <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pollen. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
+
