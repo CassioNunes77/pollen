@@ -14,12 +14,14 @@
     --color-pollen-medium: #FF9F43;
     --color-pollen-deep: #F58B39;
     
-    /* Cores de acento - Paleta vibrante do Pollen */
-    --color-accent-primary: #FF9F43; /* Pollen Medium - cor principal */
-    --color-accent-secondary: #58CC02; /* Verde vibrante */
-    --color-accent-tertiary: #1CB0F6; /* Azul vibrante */
-    --color-energy-yellow: #FFCD00; /* Amarelo energia */
-    --color-warm-orange: #FF9F43; /* Laranja quente */
+    /* Cores de acento - Baseadas nas imagens do app */
+    --color-accent-primary: #58CC02; /* Verde vibrante - cor principal de ação (checkmarks, botões) */
+    --color-accent-secondary: #FF9F43; /* Pollen Medium - cor de marca */
+    --color-accent-tertiary: #1CB0F6; /* Azul vibrante - elementos secundários */
+    --color-energy-yellow: #FFCD00; /* Amarelo energia - estrelas */
+    --color-warm-orange: #FF9F43; /* Laranja quente - streak/flame */
+    --color-success-green: #58CC02; /* Verde de sucesso */
+    --color-light-blue: #1CB0F6; /* Azul claro para ícones */
     
     /* Cores de texto */
     --color-text-primary: #ffffff;
@@ -27,12 +29,12 @@
     --color-text-tertiary: #6b6b6b;
     
     /* Cores de borda */
-    --color-border: rgba(255, 159, 67, 0.2);
-    --color-border-hover: rgba(255, 159, 67, 0.4);
+    --color-border: rgba(88, 204, 2, 0.2);
+    --color-border-hover: rgba(88, 204, 2, 0.4);
     
-    /* Tipografia */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Tipografia - Fontes arredondadas */
+    --font-primary: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     
     /* Espaçamentos */
     --spacing-xs: 0.5rem;
@@ -51,7 +53,7 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 40px rgba(255, 159, 67, 0.4);
+    --shadow-glow: 0 0 40px rgba(88, 204, 2, 0.4);
     
     /* Transições */
     --transition-fast: 0.2s ease;
@@ -84,6 +86,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "rlig" 1, "calt" 1;
 }
 
 /* Container */
@@ -461,15 +464,15 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-pollen-medium), var(--color-pollen-deep));
+    background: linear-gradient(135deg, var(--color-success-green), #4AB001);
     color: var(--color-text-primary);
-    box-shadow: 0 4px 20px rgba(255, 159, 67, 0.4);
+    box-shadow: 0 4px 20px rgba(88, 204, 2, 0.4);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(255, 159, 67, 0.6);
+    box-shadow: 0 8px 30px rgba(88, 204, 2, 0.6);
 }
 
 .btn-primary:active {
@@ -486,8 +489,8 @@ body {
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-    background: rgba(255, 159, 67, 0.1);
-    border-color: var(--color-pollen-medium);
+    background: rgba(88, 204, 2, 0.1);
+    border-color: var(--color-success-green);
     transform: translateY(-2px);
 }
 
@@ -568,7 +571,7 @@ section {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-pollen-medium), var(--color-pollen-deep));
+    background: linear-gradient(90deg, var(--color-success-green), #4AB001);
     transform: scaleX(0);
     transition: transform var(--transition-normal);
 }
@@ -691,7 +694,7 @@ section {
 }
 
 .portfolio-link {
-    color: var(--color-pollen-medium);
+    color: var(--color-success-green);
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
@@ -702,7 +705,7 @@ section {
 
 .portfolio-link:hover,
 .portfolio-link:focus {
-    color: var(--color-pollen-light);
+    color: #4AB001;
     gap: var(--spacing-sm);
 }
 
@@ -872,8 +875,8 @@ section {
 
 .form-input:focus {
     outline: none;
-    border-color: var(--color-pollen-medium);
-    box-shadow: 0 0 0 3px rgba(255, 159, 67, 0.1);
+    border-color: var(--color-success-green);
+    box-shadow: 0 0 0 3px rgba(88, 204, 2, 0.1);
 }
 
 .form-note {
@@ -883,14 +886,14 @@ section {
 }
 
 .form-note a {
-    color: var(--color-pollen-medium);
+    color: var(--color-success-green);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 .form-note a:hover,
 .form-note a:focus {
-    color: var(--color-pollen-light);
+    color: #4AB001;
 }
 
 @media (max-width: 768px) {
@@ -967,7 +970,7 @@ section {
 
 .footer-column a:hover,
 .footer-column a:focus {
-    color: var(--color-pollen-medium);
+    color: var(--color-success-green);
 }
 
 .footer-bottom {
@@ -1028,7 +1031,7 @@ section {
 
 /* Focus styles para acessibilidade */
 *:focus-visible {
-    outline: 2px solid var(--color-pollen-medium);
+    outline: 2px solid var(--color-success-green);
     outline-offset: 2px;
 }
 
